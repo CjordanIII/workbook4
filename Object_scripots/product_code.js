@@ -1,5 +1,6 @@
 "use strict";
 const partCode = "XYZ:1234-l";
+
 function parsePartCode(partCode) {
   const parsePartCode = {
     supplier: partCode.split(":")[0],
