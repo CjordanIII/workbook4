@@ -1,4 +1,3 @@
-// by name
 let products = [
   { product: "Gummy Worms", price: 5.79 },
   { product: "Gummy yeets", price: 5.79 },
@@ -11,7 +10,7 @@ let products = [
   { product: "short cake", price: 8.79 },
   { product: "tarts", price: 3.79 },
 ];
-
+// by name
 products.sort((a, b) =>
   a.product.toLowerCase() > b.product.toLowerCase() ? 1 : -1
 );
