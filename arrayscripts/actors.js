@@ -24,6 +24,7 @@ let academyMembers = [
 ];
 // certain id number
 const Id187 = academyMembers.filter((item) => item.memID === 187);
+
 // more than three movies
 const filmsOfActor = academyMembers.filter((item) => item.films.length >= 3);
 // gets bob
@@ -34,11 +35,12 @@ const filmWithA = academyMembers.map((item) =>
   item.films.filter((item) => item.includes("A"))
 );
 const getName = filmWithA.reduce((acc, item) => (acc += item));
-const actorNameThatDidFilmsThatStartedWithA = academyMembers.map((item) => {
-  if (getName) {
+const actorNameThatDidFilmsThatStartedWithA = academyMembers.map((item, i) => {
+  if (item.films.includes(getName.split(",")[i])) {
     return item.name;
   }
 });
+console.log(actorNameThatDidFilmsThatStartedWithA, "<<===watch");
 // certain id number
 console.log(
   `Who is the Academy Member whose ID is 187?: ${Id187.map(
@@ -57,6 +59,6 @@ nameOfActor.forEach((filmsof) => {
 });
 // get films that start with A
 console.log(`HARDER: Which Academy Members have been in a film
-// that starts with "A"? ${actorNameThatDidFilmsThatStartedWithA.map(
-  (item) => item
+// that starts with "A"? ${actorNameThatDidFilmsThatStartedWithA.map((item) =>
+  item != undefined ? item : ""
 )} `);
